@@ -3,9 +3,10 @@ export const minBy = <T>(
   cb: (el: T) => string | number
 ): T | undefined => {
   let min = array[0];
+  if (min === undefined) return undefined;
   for (let element of array) {
     console.log(cb(element), min);
-    if (cb(element) < cb(min!)) {
+    if (cb(element) < cb(min)) {
       min = element;
     }
   }
@@ -17,8 +18,9 @@ export function maxBy<T>(
   cb: (el: T) => string | number
 ): T | undefined {
   let max = array[0];
+  if (max === undefined) return undefined;
   for (let element of array) {
-    if (cb(element) > cb(max!)) {
+    if (cb(element) > cb(max)) {
       max = element;
     }
   }

@@ -6,8 +6,8 @@ export type Planet = {
   vol: { volValue: number; volExponent: number };
   gravity: number;
   avgTemp: number;
-  moonsCount: number | undefined;
-  moons: string[] | undefined;
+  moonsCount?: number;
+  moons?: string[];
 };
 export type Asteroid = {
   name: string;
