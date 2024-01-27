@@ -7,9 +7,9 @@ export function find<T>(
 ): T | undefined {
   for (let i = 0; i < array.length; i++) {
     const element: T | undefined = array[i];
-    if (callback(element)) {
+    if (callback(element as T)) {
       return element;
     }
-    return undefined;
   }
+  return undefined;
 }
